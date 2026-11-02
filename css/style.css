@@ -4,3 +4,14 @@
 @media(max-width:800px){.site-header{height:72px}.menu-toggle{display:block}.primary-nav{display:none;position:absolute;top:71px;left:0;right:0;background:var(--cream);padding:20px 25px 25px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:18px}.primary-nav.is-open{display:flex}.primary-nav .nav-cta{text-align:center}.hero{grid-template-columns:1fr;padding-top:65px;padding-bottom:45px}.hero-art{height:290px}.art-sun{width:220px;height:220px}.art-plate{width:280px;height:170px}.art-loaf,.art-croissant{font-size:90px}.intro-grid,.split-section,.form-layout{grid-template-columns:1fr;gap:28px}.feature-grid,.values-grid{grid-template-columns:1fr 1fr}.product-grid{grid-template-columns:1fr}.callout{margin:35px 20px;padding:32px;align-items:flex-start;flex-direction:column}.section{padding:58px 25px}}
 @media(max-width:520px){.hero h1{font-size:43px}.hero-actions{align-items:flex-start;flex-direction:column;gap:15px}.hero-art{transform:scale(.9);margin:-10px 0}.feature-grid,.values-grid{grid-template-columns:1fr}.section-heading{align-items:flex-start;flex-direction:column}.product-card{grid-template-columns:100px 1fr}.product-emoji{font-size:45px}.product-info{padding:14px}.product-info h2{font-size:21px}.contact-form{padding:20px}.page-hero{padding-top:60px}.footer-links{gap:15px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+
+/* Part 3 enhancements: product sorting and accessible image lightbox */
+#product-sort{min-height:44px;padding:.65rem .85rem;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink)}
+.product-photo,.feature-image,.hero-photo img{cursor:zoom-in;transition:transform .25s ease,filter .25s ease}
+.product-photo:hover,.feature-image:hover,.hero-photo img:hover{transform:scale(1.015);filter:saturate(1.06)}
+.image-lightbox{width:min(92vw,900px);max-width:900px;max-height:90vh;padding:1rem;border:0;border-radius:14px;background:#fffaf3;box-shadow:0 20px 70px rgba(0,0,0,.35)}
+.image-lightbox::backdrop{background:rgba(30,22,18,.82)}
+.image-lightbox img{display:block;max-width:100%;max-height:72vh;margin:auto;object-fit:contain;border-radius:8px}
+.image-lightbox p{margin:.7rem 2.5rem 0;text-align:center;color:var(--muted)}
+.lightbox-close{position:absolute;top:.5rem;right:.65rem;width:40px;height:40px;border:0;border-radius:50%;background:var(--rose);color:white;font-size:1.6rem;cursor:pointer}
+@media(prefers-reduced-motion:reduce){.product-photo,.feature-image,.hero-photo img{transition:none}}
