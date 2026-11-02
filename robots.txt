@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://st10502124.github.io/WEDE5020-POE-Part-3-ST10502124/sitemap.xml
