@@ -29,7 +29,7 @@ This project is a responsive website concept for Fresh Bites Bakery. It introduc
 - Keyboard-accessible image lightbox for product and featured images.
 - Product links prefill the enquiry form with the selected product.
 - Required fields, email input types and minimum text lengths for form validation.
-- Page-specific titles and meta descriptions, semantic headings, labels and image alternative text.
+- Page-specific titles and meta descriptions, canonical URLs, Open Graph and Twitter sharing metadata, semantic headings, labels and image alternative text.
 - `robots.txt` and `sitemap.xml` for basic search-engine discovery.
 - Reduced-motion CSS support and a skip-to-content link.
 
@@ -75,7 +75,7 @@ The homepage and product catalogue currently reference images hosted by Unsplash
 - [ ] Check layout at desktop, tablet and mobile widths.
 - [ ] Test mobile navigation and FAQ accordion.
 - [ ] Test product data loading, product search, category filter and name sorting.
-- Open product and featured images with mouse and keyboard; close the lightbox.
+- [ ] Open product and featured images with mouse and keyboard; close the lightbox.
 - [ ] Open an enquiry from a product card and confirm the product field is prefilled.
 - [ ] Test required fields and invalid email addresses.
 - [ ] Deploy to the intended hosting service and test the live website.
@@ -88,11 +88,11 @@ Each page has a descriptive title and meta description. The site uses semantic p
 
 ## Changelog
 
-| Update | Changes |
+| 2 November 2026 – Product catalogue | Moved catalogue data into `js/products.json` and used the Fetch API to render, search, filter and sort products dynamically. |\n| 2 November 2026 – SEO and form usability | Added canonical and social-sharing metadata to each page and hid the Netlify spam-trap fields from normal visitors. |\n| Update | Changes |
 |---|---|
 | Part 3 website build | Added the five HTML pages and organised CSS and JavaScript into separate folders. |
 | Interactive features | Added mobile navigation, FAQ accordion, JSON product loading, product filtering/search/sorting, keyboard-accessible image lightbox, enquiry prefill and client-side validation with AJAX-style form submission. |
-| SEO and documentation | Added page metadata, robots.txt, sitemap.xml and this README with setup, features, limitations and testing notes. |
+| SEO and documentation | Added page titles/descriptions, canonical URLs, social sharing metadata, robots.txt, sitemap.xml and this README with setup, features, limitations and testing notes. |
 
 ## References
 
