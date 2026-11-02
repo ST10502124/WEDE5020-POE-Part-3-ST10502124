@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const category = document.querySelector("#category-filter");
   const cards = [...document.querySelectorAll(".product-card")];
   const count = document.querySelector("#product-count");
+  const sort = document.querySelector("#product-sort");
+  const productGrid = document.querySelector("#product-grid");
+  const originalOrder = [...cards];
   const empty = document.querySelector("#no-products");
   const filterProducts = () => {
     if (!cards.length) return;
@@ -35,10 +38,46 @@ document.addEventListener("DOMContentLoaded", () => {
     if (empty) empty.hidden = visible !== 0;
   };
   search?.addEventListener("input", filterProducts);
+  sort?.addEventListener("change", () => {
+    if (!productGrid) return;
+    const ordered = [...cards];
+    if (sort.value === "name-asc") ordered.sort((a, b) => (a.dataset.name || "").localeCompare(b.dataset.name || ""));
+    else if (sort.value === "name-desc") ordered.sort((a, b) => (b.dataset.name || "").localeCompare(a.dataset.name || ""));
+    else ordered.splice(0, ordered.length, ...originalOrder);
+    ordered.forEach(card => productGrid.appendChild(card));
+    filterProducts();
+  });
   category?.addEventListener("change", filterProducts);
   const requestedItem = new URLSearchParams(window.location.search).get("item");
   const productField = document.querySelector("#enq-product");
   if (requestedItem && productField) productField.value = requestedItem;
+
+
+  // Lightweight image gallery: open product images in an accessible dialog.
+  document.querySelectorAll(".product-photo, .feature-image, .hero-photo img").forEach((image) => {
+    image.tabIndex = 0;
+    image.setAttribute("role", "button");
+    image.setAttribute("aria-label", "Open larger image: " + (image.alt || "Bakery image"));
+    const openImage = () => {
+      let dialog = document.querySelector("#image-lightbox");
+      if (!dialog) {
+        dialog = document.createElement("dialog");
+        dialog.id = "image-lightbox";
+        dialog.className = "image-lightbox";
+        dialog.innerHTML = '<button type="button" class="lightbox-close" aria-label="Close image">×</button><img alt=""><p class="lightbox-caption"></p>';
+        document.body.appendChild(dialog);
+        dialog.querySelector(".lightbox-close").addEventListener("click", () => dialog.close());
+        dialog.addEventListener("click", (event) => { if (event.target === dialog) dialog.close(); });
+      }
+      const largeImage = dialog.querySelector("img");
+      largeImage.src = image.src;
+      largeImage.alt = image.alt;
+      dialog.querySelector(".lightbox-caption").textContent = image.alt;
+      if (!dialog.open) dialog.showModal();
+    };
+    image.addEventListener("click", openImage);
+    image.addEventListener("keydown", (event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); openImage(); } });
+  });
 
   // Netlify Forms processes these submissions after the site is deployed and form detection is enabled.
   document.querySelectorAll("form[data-netlify='true']").forEach((form) => form.addEventListener("submit", async (event) => {
