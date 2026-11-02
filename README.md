@@ -16,7 +16,7 @@ This project is a responsive website concept for Fresh Bites Bakery. It introduc
 |---|---|
 | `index.html` | Homepage and featured bakery products |
 | `about.html` | Bakery story, values and FAQ accordion |
-| `products.html` | Product catalogue with search and category filtering |
+| `products.html` | Product catalogue loaded from JSON with search, category filtering and sorting |
 | `enquiry.html` | Product and special-order enquiry form |
 | `contact.html` | General contact form |
 
@@ -24,7 +24,8 @@ This project is a responsive website concept for Fresh Bites Bakery. It introduc
 
 - Responsive navigation and page layouts for desktop and mobile.
 - FAQ accordion with accessible expanded-state attributes.
-- Product search, category filtering and name sorting using JavaScript DOM updates.
+- Product catalogue is loaded dynamically from `js/products.json` using the Fetch API.
+- Product search, category filtering and name sorting update the displayed catalogue using JavaScript DOM manipulation.
 - Keyboard-accessible image lightbox for product and featured images.
 - Product links prefill the enquiry form with the selected product.
 - Required fields, email input types and minimum text lengths for form validation.
@@ -44,7 +45,8 @@ WEDE5020-POE-Part-3-ST10502124/
 ├── css/
 │   └── style.css
 ├── js/
-│   └── script.js
+│   ├── script.js
+│   └── products.json
 ├── robots.txt
 ├── sitemap.xml
 └── README.md
@@ -72,7 +74,7 @@ The homepage and product catalogue currently reference images hosted by Unsplash
 - [ ] Check all five pages and internal navigation.
 - [ ] Check layout at desktop, tablet and mobile widths.
 - [ ] Test mobile navigation and FAQ accordion.
-- [ ] Test product search, category filter and name sorting.
+- [ ] Test product data loading, product search, category filter and name sorting.
 - Open product and featured images with mouse and keyboard; close the lightbox.
 - [ ] Open an enquiry from a product card and confirm the product field is prefilled.
 - [ ] Test required fields and invalid email addresses.
@@ -89,7 +91,7 @@ Each page has a descriptive title and meta description. The site uses semantic p
 | Update | Changes |
 |---|---|
 | Part 3 website build | Added the five HTML pages and organised CSS and JavaScript into separate folders. |
-| Interactive features | Added mobile navigation, FAQ accordion, product filtering/search/sorting, keyboard-accessible image lightbox, enquiry prefill and client-side validation with AJAX-style form submission. |
+| Interactive features | Added mobile navigation, FAQ accordion, JSON product loading, product filtering/search/sorting, keyboard-accessible image lightbox, enquiry prefill and client-side validation with AJAX-style form submission. |
 | SEO and documentation | Added page metadata, robots.txt, sitemap.xml and this README with setup, features, limitations and testing notes. |
 
 ## References
