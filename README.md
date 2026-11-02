@@ -63,11 +63,11 @@ WEDE5020-POE-Part-3-ST10502124/
 
 The two forms are marked up for **Netlify Forms** and use JavaScript to submit URL-encoded form data. They need to be deployed to Netlify with form detection enabled before real submissions can be received. **GitHub Pages does not process Netlify Forms**, so the forms will not send messages when hosted only on GitHub Pages. Before using the forms with customers, deploy to Netlify and test the submission inbox, or connect another server-side form service.
 
-The bakery's real telephone number, email address and physical address have not been supplied, so no contact details have been invented. Add confirmed business information before treating the website as a live business site.
+Fresh Bites Bakery is a fictional business created for this assignment. The contact page uses the sample address **123 Bakery Lane, Plettenberg Bay, 6600, Western Cape, South Africa**. This is an invented demonstration address and is not a real shop location. No telephone number or email address has been invented. Replace the sample address and add verified contact details before using the website for a real business.
 
 ## Image and asset note
 
-The homepage and product catalogue currently reference images hosted by Unsplash. These are externally hosted image assets; replace them with original bakery photographs or illustrations where possible, especially if the bakery can provide its own images. Keep meaningful alt text for images.
+The homepage and product catalogue use illustrative bakery photographs hosted by Unsplash. They are sample images for this fictional business rather than photographs of an actual Fresh Bites Bakery shop or products. Replace them with original photographs if the website is adapted for a real business. Keep meaningful alt text for images.
 
 ## Testing checklist
 
